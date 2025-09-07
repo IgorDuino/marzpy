@@ -18,7 +18,7 @@ class Subscription:
                 return await response.json()
             else:
                 return base64.b64decode(result).decode("utf-8")
-        except aiohttp.exceptions.RequestException as ex:
+        except aiohttp.ClientError as ex:
             print(f"Request Exception: {ex}")
             return None
 
